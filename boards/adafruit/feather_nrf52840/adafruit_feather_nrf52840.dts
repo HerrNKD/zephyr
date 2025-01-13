@@ -1,5 +1,4 @@
 /*
- * Copyright (c) 2020 Tobias Svehagen
  * Copyright (c) 2024 Jacob Winther
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -7,19 +6,12 @@
 
 /dts-v1/;
 #include "adafruit_feather_nrf52840_common.dtsi"
-#include <nordic/nrf52840_partition.dtsi>
+#include "nrf52840_partition_uf2_sdv6.dtsi"
+#include "cdc_acm_serial.dtsi"
 
 / {
 	model = "Adafruit Feather nRF52840 Express";
-	compatible = "adafruit,feather-nrf52840";
-
-	chosen {
-		zephyr,console = &uart0;
-		zephyr,shell-uart = &uart0;
-		zephyr,uart-mcumgr = &uart0;
-		zephyr,bt-mon-uart = &uart0;
-		zephyr,bt-c2h-uart = &uart0;
-	};
+	compatible = "adafruit,feather-nrf52840-uf2";
 
 	leds {
 		led0: led_0 {
